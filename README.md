@@ -6,8 +6,14 @@ Agora alguns meses depois quero refazer o desafio, dessa vez com algumas tecnolo
 # Instalar
 ```bash
 git clone https://github.com/finpama/Desafio_Edutech
+cd Desafio_Edutech
 npm i
+
+```
+Para executar use:
+```bash
 npm run dev
+
 ```
 
 # Tecnologias:

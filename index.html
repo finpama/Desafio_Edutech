@@ -7,40 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/home.scss">
 
     <title>Sobre - Edutech</title>
 </head>
 
 <body>
-    <section>
-        <img src="img/parana.png" alt="Paraná">
-        <p>Modo de Cor:</p>
-        <ul>
-            <li>
-                <button><img src="/img/svg/ModoClaro.svg" alt="Modo Claro"></button>
-            </li>
-            <li>
-                <button><img src="/img/svg/ModoEscuro.svg" alt="Modo ModoEscuro"></button>
-            </li>
-            <li>
-                <button><img src="/img/svg/ModoContraste.svg" alt=""></button>
-            </li>
-        </ul>
-    </section>
     <header>
-        <img src="img/edutech.png" alt="Edutech">
-        <nav>
-            <button><img src="/img/svg/Menu.svg" alt="Botão Navegação"></button>
-            <ul>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Inscrição</a></li>
-                <li><a href="#">Trilha</a></li>
-            </ul>
-        </nav>
+        <section class="preHeader">
+            <img class="parana" src="img/parana.png" alt="Paraná">
+            <div class="acessibility">
+                <p>Modo de Cor:</p>
+                <ul>
+                    <li>
+                        <button class="whiteMode"><img src="/img/svg/ModoClaro.svg" alt="Modo Claro"></button>
+                    </li>
+                    <li>
+                        <button class="darkMode"><img src="/img/svg/ModoEscuro.svg" alt="Modo ModoEscuro"></button>
+                    </li>
+                    <li>
+                        <button class="contrastMode"><img src="/img/svg/ModoContraste.svg" alt=""></button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="header">
+            <img class="edutech" src="img/edutech.png" alt="Edutech">
+            <nav class="navBar">
+                <button><img src="/img/svg/Menu.svg" alt="Botão Navegação"></button>
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Inscrição</a></li>
+                    <li><a href="#">Trilha</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
 
     <main>
-        <section>
+        <!-- <section>
             <span>
                 <p>O que é o </p>
                 <h1>Edutech</h1>
@@ -58,51 +63,51 @@
                 <h1>Trilhas</h1>
                 <h2>De acordo com a sua série:</h2>
             </span>
-        
-        <article>
-            <img src="img/games.png" alt="">
-            <p></p>
-            <h2></h2>
-            <p></p>
-            <a href="inscricao.html"></a>
-        </article>
-        <article>
-            <img src="img/frontend.png" alt="">
-            <p></p>
-            <h2></h2>
-            <p></p>
-            <a href="inscricao.html"></a>
-        </article>
-        <article>
-            <img src="img/mobile.png" alt="">
-            <p></p>
-            <h2></h2>
-            <p></p>
-            <a href="inscricao.html"></a>
-        </article>
-        <article>
-            <img src="img/datascience.png" alt="">
-            <p></p>
-            <h2></h2>
-            <p></p>
-            <a href="inscricao.html"></a>
-        </article>
-        <article>
-            <img src="img/programming.png" alt="">
-            <p></p>
-            <h2></h2>
-            <p></p>
-            <a href="inscricao.html"></a>
-        </article>
-        </section>
+
+            <article>
+                <img src="img/games.png" alt="">
+                <p></p>
+                <h2></h2>
+                <p></p>
+                <a href="inscricao.html"></a>
+            </article>
+            <article>
+                <img src="img/frontend.png" alt="">
+                <p></p>
+                <h2></h2>
+                <p></p>
+                <a href="inscricao.html"></a>
+            </article>
+            <article>
+                <img src="img/mobile.png" alt="">
+                <p></p>
+                <h2></h2>
+                <p></p>
+                <a href="inscricao.html"></a>
+            </article>
+            <article>
+                <img src="img/datascience.png" alt="">
+                <p></p>
+                <h2></h2>
+                <p></p>
+                <a href="inscricao.html"></a>
+            </article>
+            <article>
+                <img src="img/programming.png" alt="">
+                <p></p>
+                <h2></h2>
+                <p></p>
+                <a href="inscricao.html"></a>
+            </article>
+        </section> -->
     </main>
 
     <footer>
-        <section>
+        <section class="redesParana">
             <a target="_blank" href="https://www.educacao.pr.gov.br/">
                 <img src="/img/parana.png" alt="Paraná">
             </a>
-            <section>
+            <div class="redes">
                 <a target="_blank" href="http://www.facebook.com/EducacaoParana">
                     <img src="/img/svg/facebook.svg" alt="Facebook Paraná">
                 </a>
@@ -112,26 +117,32 @@
                 <a target="_blank" href="https://www.instagram.com/seedparana/">
                     <img src="/img/svg/instagram.svg" alt="Instagram Paraná">
                 </a>
-            </section>
-        </section>
-        <section>
-            <img src="/img/edutech.png" alt="Edutech">
-            <div>
-                <p>Em Parceria com:</p>
-                <img src="/img/alura.png" alt="Alura">
             </div>
         </section>
-        <section>
-            <span>
-                <p>Site por:</p>
-                <a target="_blank" href="https://github.com/finpama/finpama">
+
+        <section class="parceria">
+            <img class="logoEdutech" src="/img/edutech.png" alt="Edutech">
+            <p>Em Parceria com:</p>
+            <a target="_blank" href="https://www.alura.com.br/"><img src="/img/alura.png" alt="Alura"></a>
+        </section>
+
+        <section class="creditos">
+            <span class="finpama_container">
+                <p class="finpama_credito">Site por:</p>
+                <a class="finpama_link" target="_blank" href="https://github.com/finpama/finpama">
                     <p>Finpama</p>
                     <img src="/img/github.png" alt="GitHub">
                 </a>
             </span>
-            <span>
-                <a href="https://iconscout.com/icons/github" target="_blank">Ícone do GitHub por</a>
-                <a href="https://iconscout.com/contributors/pixel-icons" target="_blank">Pixel Icons</a>
+            <span class="creditos_links">
+                <div>
+                    <a target="_blank" href="https://iconscout.com/icons/github">Ícone do GitHub por</a>
+                    <a target="_blank" href="https://iconscout.com/contributors/pixel-icons">Pixel Icons</a>
+                </div>
+                <div>
+                    <a target="_blank" href="https://meyerweb.com/eric/tools/css/reset/">Reset Css</a>
+                    <a target="_blank" href="https://meyerweb.com/">Por Eric da Meyerweb</a>
+                </div>
             </span>
         </section>
     </footer>
