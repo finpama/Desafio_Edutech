@@ -1,0 +1,29 @@
+@use 'sass:math';
+
+@import url("https://meyerweb.com/eric/tools/css/reset/reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Sora:wght@300;400;500&display=swap');
+
+$blue: #28407C;
+$green: #008E3F;
+
+$montserrat: 'Montserrat', sans-serif;
+$sora: 'Sora', sans-serif;
+
+
+@function rem($px) {
+    $rem: math.div($px, 16);
+    @return #{$rem}rem;
+}
+
+@mixin align($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin grid($numCols, $numRows, $colSize: 1fr, $rowSize: 1fr) {
+    display: grid;
+    grid-template-columns: repeat($numCols, $colSize);
+    grid-template-rows: repeat($numRows, $rowSize);
+}

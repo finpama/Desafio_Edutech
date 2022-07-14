@@ -1,29 +1,10 @@
-@import url("https://meyerweb.com/eric/tools/css/reset/reset.css");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Sora:wght@300;400;500&display=swap');
+@import '_tools.scss';
 
-$blue: #28407C;
-$green: #008E3F;
-
-$montserrat: 'Montserrat', sans-serif;
-$sora: 'Sora', sans-serif;
-
-
-@mixin align($direction: row, $justify: center, $align: center) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
-}
-
-@mixin grid($numCols, $numRows, $colSize: 1fr, $rowSize: 1fr) {
-    display: grid;
-    grid-template-columns: repeat($numCols, $colSize);
-    grid-template-rows: repeat($numRows, $rowSize);
-}
 
 header *,
 footer * {
-    display: inline-block
+    display: inline-block;
+    text-decoration: none;
 }
 
 a {
@@ -35,20 +16,19 @@ a {
 }
 
 header {
-    width: 100%;
+    width: 100vw;
     position: fixed;
     top: 0;
 
     background: $blue;
 
     .preHeader {
-        @include align;
-
-        height: 50px;
+        @include align(row, space-between);
+        height: rem(50);
 
         .parana {
-            width: 30%;
-            padding: 10px 20px;
+            width: rem(100);
+            margin: 0 auto;
         }
 
         .acessibility {
@@ -61,7 +41,7 @@ header {
                 height: auto;
 
                 color: white;
-                font-size: 13px;
+                font-size: rem(13);
                 font-family: $montserrat;
                 font-weight: 600;
             }
@@ -79,8 +59,6 @@ header {
                     padding: 0;
                     background-color: transparent;
 
-                    width: auto;
-
                     img {
                         width: 70%;
                     }
@@ -90,49 +68,56 @@ header {
     }
 
     .header {
-        @include align(row, space-evenly);
+        @include align(row, space-between);
 
-        height: 70px;
+        height: rem(70);
 
-        .edutech {
+        .edutech_container {
             height: 100%;
+            margin-left: rem(15);
+
+            .edutech_img {
+                height: 100%;
+            }
         }
 
         .navBar {
             @include align;
+            position: relative;
+            margin: 0 rem(15) 0 auto;
 
             button {
                 @include align;
 
-                margin: 2px 5px 0 0;
+                margin: rem(2) rem(5) 0 0;
                 border: 0;
                 padding: 0;
                 background-color: transparent;
-
-                width: auto;
 
                 img {
                     width: 100%;
                 }
             }
 
+            ul {
+                display: none;
+            }
+
             a {
                 width: 50%;
-                margin: 0 4px;
+                margin: 0 rem(4);
                 height: auto;
 
                 color: white;
-                font-size: 13px;
+                font-size: rem(13);
                 font-family: $montserrat;
                 font-weight: 600;
-                text-decoration: none;
             }
         }
     }
 }
 
 main {
-    background: #000;
     margin: 150px 0 10px 0;
 }
 
@@ -144,15 +129,15 @@ footer {
     .redesParana {
         @include align(column);
 
-        padding: 25px;
+        padding: rem(25);
 
         a {
-            padding: 2px
+            padding: rem(2)
         }
 
         .redes {
             @include align(row, space-evenly);
-            padding: 2px;
+            padding: rem(2);
             width: 100%;
         }
     }
@@ -168,10 +153,10 @@ footer {
             @include align;
             width: 50%;
             height: auto;
-            margin-bottom: 10px;
+            margin-bottom: rem(10);
 
             color: white;
-            font-size: 13px;
+            font-size: rem(13);
             font-family: $montserrat;
             font-weight: 500;
         }
@@ -180,16 +165,16 @@ footer {
     .creditos {
         @include align(column);
 
-        margin: 20px;
+        margin: rem(20);
 
         .finpama_container {
             @include align(column);
 
-            margin: 20px;
+            margin: rem(20);
 
             .finpama_credito {
                 color: white;
-                font-size: 13px;
+                font-size: rem(13);
                 font-family: $montserrat;
                 font-weight: 500;
             }
@@ -200,16 +185,16 @@ footer {
                 p {
                     width: 50%;
                     height: auto;
-                    margin: 0 12px;
+                    margin: 0 rem(12);
 
                     color: black;
-                    font-size: 16px;
+                    font-size: rem(16);
                     font-family: $montserrat;
                     font-weight: 700;
                 }
 
                 img {
-                    width: 40px;
+                    width: rem(30);
                 }
             }
         }
@@ -219,8 +204,7 @@ footer {
 
             a {
                 color: #6B7693;
-                text-decoration: none;
-                font-size: 16px;
+                font-size: rem(16);
                 font-family: $montserrat;
                 font-weight: 700;
             }
@@ -228,8 +212,7 @@ footer {
             a:nth-child(1),
             a:nth-child(3) {
                 color: #A0A9BF;
-                text-decoration: none;
-                font-size: 16px;
+                font-size: rem(16);
                 font-family: $montserrat;
                 font-weight: 700;
             }
