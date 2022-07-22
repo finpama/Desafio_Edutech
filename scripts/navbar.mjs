@@ -1,4 +1,4 @@
-export function navbarSetup(button, navList) {
+export function navbarButtonSetup(button, navList) {
         button.addEventListener('click', function () {
 
             if (navList.style.display === 'none') {
