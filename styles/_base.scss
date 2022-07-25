@@ -7,7 +7,7 @@ footer * {
     text-decoration: none;
 }
 
-a {
+a, button {
     transition: 200ms;
 
     &:hover {
@@ -89,7 +89,7 @@ header {
             button {
                 @include align;
 
-                margin: rem(2) rem(5) 0 0;
+                
                 border: 0;
                 padding: 0;
                 background-color: transparent;
