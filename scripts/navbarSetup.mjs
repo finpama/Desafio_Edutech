@@ -34,7 +34,7 @@ function createNavbarSetup() {
             }
         });
         
-        console.log('[navbarSetup] Navbar ready!');
+        console.log('[navbarSetup] Navbar ready.');
     }
 
     return {

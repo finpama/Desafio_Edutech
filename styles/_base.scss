@@ -49,10 +49,6 @@ header {
             ul {
                 @include align;
 
-                button.whiteMode {
-                    display: none;
-                }
-
                 button {
                     @include align;
                     border: 0;
