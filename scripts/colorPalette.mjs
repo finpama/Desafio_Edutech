@@ -1,4 +1,3 @@
-
 function createPalette() {
 
     const colorBase = {
@@ -17,8 +16,8 @@ function createPalette() {
         whiteContrast: {
             txt: 'black',
             bg: 'white',
-            title: '#00247D',
-            preTitle: '#005827'
+            title: '#001C62',
+            preTitle: '#00431E'
         },
         darkContrast: {
             txt: 'white',
@@ -28,7 +27,7 @@ function createPalette() {
         }
     }
 
-    function New(state, name, prop) {
+    function set(state, name, prop) {
 
         for(const key in colorBase) {
             if(key === state) {
@@ -40,7 +39,7 @@ function createPalette() {
         colorBase[state] = {[name]: prop}
     }
 
-    function Req(state, name) {
+    function req(state, name) {
         if(state){
             if (name) {
                 return colorBase[state][name]
@@ -52,10 +51,22 @@ function createPalette() {
             return colorBase
         }
     }
+
+    function del(state, name) {
+        if(state){
+            if (name) {
+                delete colorBase[state][name]
+            } else {
+                delete colorBase[state]
+            }
+
+        }
+    }
     
     return {
-        New,
-        Req,
+        set,
+        req,
+        del,
     }
 }
 

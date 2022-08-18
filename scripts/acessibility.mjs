@@ -6,30 +6,57 @@ function createAcessibilityButtonSetup() {
     const palette = createPalette();
 
     function start() {
+
+        const modes = {
+            whiteMode() {
+                cssParser.useObjectSheet('.background', {background: palette.req('whiteMode', 'bg')});
+                cssParser.useObjectSheet('.preTitle', {color: palette.req('whiteMode', 'preTitle')});
+                cssParser.useObjectSheet('.title', {color: palette.req('whiteMode', 'title')});
+                cssParser.useObjectSheet('.text', {color: palette.req('whiteMode', 'txt')});
+            },
+
+            darkMode() {
+                cssParser.useObjectSheet('.background', {background: palette.req('darkMode', 'bg')});
+                cssParser.useObjectSheet('.preTitle', {color: palette.req('darkMode', 'preTitle')});
+                cssParser.useObjectSheet('.title', {color: palette.req('darkMode', 'title')});
+                cssParser.useObjectSheet('.text', {color: palette.req('darkMode', 'txt')});
+
+            },
+
+            whiteContrast() {
+                cssParser.useObjectSheet('.background', {background: palette.req('whiteContrast', 'bg')});
+                cssParser.useObjectSheet('.preTitle', {color: palette.req('whiteContrast', 'preTitle')});
+                cssParser.useObjectSheet('.title', {color: palette.req('whiteContrast', 'title')});
+                cssParser.useObjectSheet('.text', {color: palette.req('whiteContrast', 'txt')});
+            },
+
+            darkContrast() {
+                cssParser.useObjectSheet('.background', {background: palette.req('darkContrast', 'bg')});
+                cssParser.useObjectSheet('.preTitle', {color: palette.req('darkContrast', 'preTitle')});
+                cssParser.useObjectSheet('.title', {color: palette.req('darkContrast', 'title')});
+                cssParser.useObjectSheet('.text', {color: palette.req('darkContrast', 'txt')});
+            }
+        }
+
+
+
         function render() {
             if (buttons.darkBtt.state === false && buttons.contrastBtt.state === false) {
 
-                //modo claro
-                cssParser.useObjectSheet('.text', {color: palette.Req('whiteMode', 'txt')});
-                cssParser.useObjectSheet('.background', {background: palette.Req('whiteMode', 'bg')});
+                modes.whiteMode()
 
             } else if (buttons.darkBtt.state === true && buttons.contrastBtt.state === false) {
 
-                // modo escuro 
-                cssParser.useObjectSheet('.text', {color: palette.Req('darkMode', 'txt')});
-                cssParser.useObjectSheet('.background', {background: palette.Req('darkMode', 'bg')});
-
+                modes.darkMode()
+                
             } else if (buttons.darkBtt.state === false && buttons.contrastBtt.state === true) {
 
-                // modo contraste
-                cssParser.useObjectSheet('.text', {color: palette.Req('whiteContrast', 'txt')});
-                cssParser.useObjectSheet('.background', {background: palette.Req('whiteContrast', 'bg')});
-
+                modes.whiteContrast()
+                
             } else if (buttons.darkBtt.state === true && buttons.contrastBtt.state === true) {
 
-                // contraste escuro
-                cssParser.useObjectSheet('.text', {color: palette.Req('darkContrast', 'txt')});
-                cssParser.useObjectSheet('.background', {background: palette.Req('darkContrast', 'bg')});
+                modes.darkContrast()
+                
             }
         }
 

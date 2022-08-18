@@ -3,38 +3,37 @@ function createCssParser() {
     //cssParser.useObjectSheet('className', {display: none});
     //cssParser.searchProp('className', 'display') == 'none';
 
-    function filterElement(susClassElement) {
-        let clearElement;
+    function getElements(className) {
+        const elements = document.querySelectorAll(className);
 
-        if (typeof susClassElement === 'string') {
-            clearElement = document.querySelector(susClassElement);
-
-            if(!clearElement) {throw new Error(`[cssParser]"${susClassElement}" is not a ClassName or a Id`)};
-
-        } else if (typeof susClassElement === 'object') {
-            clearElement = susClassElement;
-
-            if(!clearElement.nodeType) {throw new Error(`[cssParser] "${clearElement.nodeType}" is Not a Node object`)}
-
+        if (!elements.length) {
+            throw new Error(`[cssParser] Do not found any nodes with "${className}" class or id`)
         } else {
-            throw new Error(`[cssParser] "${typeof susClassElement }" is not an acceptable type of parameter`);
-        }
-
-        return clearElement;
-    }
-
-    function useObjectSheet(classElement, object) {
-        const el = filterElement(classElement);
-
-        for (const prop in object) {
-            el.style[prop] = object[prop];
+            return elements
         }
     }
 
-    function searchProp(classElement, prop) {
-        const el = filterElement(classElement);
+    function useObjectSheet(className, object) {
 
-        return el.style[prop];
+        const elements = getElements(className)
+
+        for (const el of elements) {
+
+            for (const prop in object) {
+                el.style[prop] = object[prop];
+            }
+        }
+    }
+
+
+
+    function searchProp(className, prop) {
+        const elements = getElements(className)
+
+        for (const el of elements) {
+
+            return el.style[prop];
+        }
     }
 
     return {
