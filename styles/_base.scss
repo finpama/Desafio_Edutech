@@ -1,11 +1,6 @@
 @import '_tools.scss';
 
 
-header *,
-footer * {
-    display: inline-block;
-    text-decoration: none;
-}
 
 a, button {
     transition: 200ms;
@@ -15,10 +10,24 @@ a, button {
     }
 }
 
+* {
+    font-family: $montserrat;
+    font-weight: 600;
+}
+
+header *,
+footer *,
+main * {
+    display: inline-block;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
 header {
     width: 100vw;
     position: fixed;
     top: 0;
+    z-index: 10;
 
     background: $blue;
 
@@ -112,7 +121,7 @@ header {
 }
 
 main {
-    margin: 150px 0 10px 0;
+    margin: rem(150) 0 rem(10) 0;
 }
 
 footer {

@@ -1,2 +1,140 @@
-@use "_base.scss";
+@import '_base.scss';
+
+
+main>section {
+    @include align(column);
+
+    margin: 10% 0;
+    padding: 0 10%;
+}
+
+section.info {
+
+    .preTitle {
+        margin-right: rem(70);
+        font-size: rem(18);
+    }
+
+    .title {
+        margin-left: rem(50);
+        font-size: rem(24);
+        font-weight: bold;
+    }
+
+    .text {
+        margin: rem(30) 0;
+        line-height: rem(24);
+    }
+}
+
+section.trilhas {
+    span {
+        @include align(column);
+
+        .preTitle {
+            margin-right: rem(70);
+            font-size: rem(18);
+        }
+
+        .title {
+            margin-left: rem(50);
+            font-size: rem(24);
+            font-weight: bold;
+        }
+
+        .text {
+            margin: rem(10) 0;
+        }
+    }
+
+    details {
+        @include shadow(rgba(0, 0, 0, 0.15));
+
+        width: 100%;
+        background-color: #E6EAF2;
+        border-radius: rem(10);
+        margin: rem(10) 0 rem(10) 0;
+
+        article {
+            @include grid(3, 1fr, 2, 1fr);
+
+            margin-top: 3%;
+
+            .preTitle {
+                margin-left: rem(10);
+                grid-column: 2/4;
+                grid-row: 1/2;
+                font-size: rem(14);
+            }
+
+            .title {
+                margin-left: rem(30);
+                font-size: rem(18);
+                font-weight: bold;
+
+            }
+
+            .text {
+                margin: 0 0 rem(15) rem(10);
+                grid-column: 2/4;
+                grid-row: 2/3;
+                font-size: rem(13.5);
+            }
+
+            img {
+                grid-column: 1/2;
+                grid-row: 1/3;
+                align-self: end;
+
+                width: 95px;
+                height: 95px;
+                object-fit: contain;
+                border-radius: 0 10px 0 10px;
+            }
+
+        }
+
+        &:nth-child(odd) {
+            summary {
+                @include shadow($gGlow);
+                @include align;
+
+                background: $green;
+                color: white;
+                width: 100%;
+                height: rem(30);
+                border-radius: rem(10);
+            }
+
+            article img {
+                background-color: $bgGreen;
+            }
+
+        }
+
+        &:nth-child(even) {
+            summary {
+                @include shadow($bGlow);
+                @include align;
+
+                background: $blue;
+                color: white;
+                width: 100%;
+                height: rem(30);
+                border-radius: rem(10);
+            }
+
+            article>img {
+                background-color: $bgBlue;
+            }
+        }
+    }
+
+    .gButton {
+        @include button($green);
+        @include shadow($gGlow);
+
+        margin-top: 7%;
+    }
+}
 

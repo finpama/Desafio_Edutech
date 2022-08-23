@@ -6,6 +6,12 @@
 $blue: #28407C;
 $green: #008E3F;
 
+$bGlow: rgba(0, 73, 255, 0.22);
+$gGlow: rgba(32, 185, 99, 0.69);
+
+$bgBlue: #1F4E6C;
+$bgGreen: #11773E;
+
 $montserrat: 'Montserrat', sans-serif;
 $sora: 'Sora', sans-serif;
 
@@ -22,8 +28,22 @@ $sora: 'Sora', sans-serif;
     justify-content: $justify;
 }
 
-@mixin grid($numCols, $numRows, $colSize: 1fr, $rowSize: 1fr) {
+@mixin grid($numCols, $colSize: 1fr, $numRows,  $rowSize: 1fr) {
     display: grid;
     grid-template-columns: repeat($numCols, $colSize);
     grid-template-rows: repeat($numRows, $rowSize);
+}
+
+@mixin button($color: $blue) {
+    @include align();
+
+    width: 50vw;
+    height: rem(30);
+    border-radius: 7px;
+    background-color: $color;
+    color:white;
+}
+
+@mixin shadow($color: $bGlow) {
+    box-shadow: 3px 3px 8px 0px $color;
 }

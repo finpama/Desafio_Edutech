@@ -58,6 +58,17 @@ function createAcessibilityButtonSetup() {
                 modes.darkContrast()
                 
             }
+
+            for (const key in buttons) {
+                const button = buttons[key];
+                
+                if (button.state) {
+                    button.el.style.opacity = 0.5
+
+                } else {
+                    button.el.style.opacity = 1
+                }
+            }
         }
 
 
