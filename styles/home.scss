@@ -131,7 +131,7 @@ section.trilhas {
     }
 
     .gButton {
-        @include button($green);
+        @include button($green, 60%);
         @include shadow($gGlow);
 
         margin-top: 7%;

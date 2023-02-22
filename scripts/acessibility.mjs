@@ -7,35 +7,14 @@ function createAcessibilityButtonSetup() {
 
     function start() {
 
-        const modes = {
-            whiteMode() {
-                cssParser.useObjectSheet('.background', {background: palette.req('whiteMode', 'bg')});
-                cssParser.useObjectSheet('.preTitle', {color: palette.req('whiteMode', 'preTitle')});
-                cssParser.useObjectSheet('.title', {color: palette.req('whiteMode', 'title')});
-                cssParser.useObjectSheet('.text', {color: palette.req('whiteMode', 'txt')});
-            },
+        console.log('[buttonSetup] Setting buttons...')
 
-            darkMode() {
-                cssParser.useObjectSheet('.background', {background: palette.req('darkMode', 'bg')});
-                cssParser.useObjectSheet('.preTitle', {color: palette.req('darkMode', 'preTitle')});
-                cssParser.useObjectSheet('.title', {color: palette.req('darkMode', 'title')});
-                cssParser.useObjectSheet('.text', {color: palette.req('darkMode', 'txt')});
-
-            },
-
-            whiteContrast() {
-                cssParser.useObjectSheet('.background', {background: palette.req('whiteContrast', 'bg')});
-                cssParser.useObjectSheet('.preTitle', {color: palette.req('whiteContrast', 'preTitle')});
-                cssParser.useObjectSheet('.title', {color: palette.req('whiteContrast', 'title')});
-                cssParser.useObjectSheet('.text', {color: palette.req('whiteContrast', 'txt')});
-            },
-
-            darkContrast() {
-                cssParser.useObjectSheet('.background', {background: palette.req('darkContrast', 'bg')});
-                cssParser.useObjectSheet('.preTitle', {color: palette.req('darkContrast', 'preTitle')});
-                cssParser.useObjectSheet('.title', {color: palette.req('darkContrast', 'title')});
-                cssParser.useObjectSheet('.text', {color: palette.req('darkContrast', 'txt')});
-            }
+        const switchTo = function (mode) {
+            
+            cssParser.useObjectSheet('.background', { background: palette.req(mode, 'bg') });
+            cssParser.useObjectSheet('.preTitle', { color: palette.req(mode, 'preTitle') });
+            cssParser.useObjectSheet('.title', { color: palette.req(mode, 'title') });
+            cssParser.useObjectSheet('.text', { color: palette.req(mode, 'txt') });
         }
 
 
@@ -43,25 +22,25 @@ function createAcessibilityButtonSetup() {
         function render() {
             if (buttons.darkBtt.state === false && buttons.contrastBtt.state === false) {
 
-                modes.whiteMode()
+                switchTo('whiteMode')
 
             } else if (buttons.darkBtt.state === true && buttons.contrastBtt.state === false) {
 
-                modes.darkMode()
-                
+                switchTo('darkMode')
+
             } else if (buttons.darkBtt.state === false && buttons.contrastBtt.state === true) {
 
-                modes.whiteContrast()
-                
+                switchTo('whiteContrast')
+
             } else if (buttons.darkBtt.state === true && buttons.contrastBtt.state === true) {
 
-                modes.darkContrast()
-                
+                switchTo('darkContrast')
+
             }
 
             for (const key in buttons) {
                 const button = buttons[key];
-                
+
                 if (button.state) {
                     button.el.style.opacity = 0.5
 
@@ -75,18 +54,18 @@ function createAcessibilityButtonSetup() {
         class Button {
             state = false;
 
-            constructor(classNameId){
+            constructor(classNameId) {
                 this.el = document.querySelector(classNameId);
             }
 
             click() {
-                if(this.state){
+                if (this.state) {
                     this.state = false;
 
                 } else {
                     this.state = true;
                 }
-                
+
                 render();
             }
         }
@@ -105,6 +84,8 @@ function createAcessibilityButtonSetup() {
         }
 
         render()
+
+        console.log('[buttonSetup] Acessibility buttons Ready.');
 
     }
 

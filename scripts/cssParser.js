@@ -6,16 +6,14 @@ function createCssParser() {
     function getElements(className) {
         const elements = document.querySelectorAll(className);
 
-        if (!elements.length) {
-            throw new Error(`[cssParser] Do not found any nodes with "${className}" class or id`)
-        } else {
-            return elements
-        }
+        return elements
     }
 
     function useObjectSheet(className, object) {
 
         const elements = getElements(className)
+
+        if (elements == undefined) return
 
         for (const el of elements) {
 
@@ -30,6 +28,8 @@ function createCssParser() {
     function searchProp(className, prop) {
         const elements = getElements(className)
 
+        if (elements == undefined) return
+        
         for (const el of elements) {
 
             return el.style[prop];

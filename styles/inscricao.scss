@@ -1,0 +1,66 @@
+@import 'tools';
+@import 'base';
+
+strong {
+    font-weight: 800;
+}
+
+section.info {
+    @include align(column);
+
+    margin: 10% 0;
+    padding: 0 10%;
+
+    h1.preTitle {
+        margin-right: rem(70);
+        font-size: rem(18);
+    }
+
+    strong.title {
+        margin-left: rem(70);
+        font-size: rem(24);
+        font-weight: bold;
+    }
+
+    .text {
+        margin: rem(10) 0;
+        line-height: rem(24);
+    }
+    
+    p.subtitle.text {
+        margin: rem(20) 0;
+    }
+
+    ul.text {
+        li {
+            margin: rem(5) 0;
+        }
+
+        li::before {
+            content: "• ";
+            font-weight: 800;
+        }
+    }
+
+    p.confirm.text {
+        @include align();
+        width: 100%;
+        font-size: rem(12);
+        margin: rem(10) 0 0 0;
+    }
+
+    a.bButton {
+        @include button($blue, 70%);
+        @include shadow($bGlow);
+        margin-bottom: rem(20);
+    }
+
+    p.moreInfo {
+        text-align: center;
+        margin-bottom: rem(25);
+    }
+
+    a.link {
+        font-weight: 700;
+    }
+}

@@ -7,49 +7,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/incricao.css">
+    <link rel="stylesheet" href="styles/inscricao.scss">
 
-    <title> Inscrição - Edutech</title>
+    <title>Inscrição - Edutech</title>
 </head>
 
-<body>
-    <section class="pre_header">
-        <img class="logo-parana" src="img/parana.png" alt="Paraná">
-        <p>Modo de Cor:</p>
-        <ul>
-            <li>
-                <button class="light"><img src="/img/svg/ModoClaro.svg" alt="Modo Claro"></button>
-            </li>
-            <li>
-                <button class="dark"><img src="/img/svg/ModoEscuro.svg" alt="Modo ModoEscuro"></button>
-            </li>
-            <li>
-                <button class="contrast"><img src="/img/svg/ModoContraste.svg" alt=""></button>
-            </li>
-        </ul>
-    </section>
-    <header class="header">
-        <img class="logo-edutech" src="img/edutech.png" alt="Edutech">
-        <nav class="nav">
-            <button class="nav_button"><img src="/img/svg/Menu.svg" alt="Botão Navegação"></button>
-            <ul class="nav_list">
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Inscrição</a></li>
-                <li><a href="#">Trilha</a></li>
-            </ul>
-        </nav>
+<body class="background">
+    <header>
+        <section class="preHeader">
+            <img class="parana" src="img/parana.png" alt="Paraná">
+            <div class="acessibility">
+                <p>Modos de Cor:</p>
+                <ul>
+                    <li>
+                        <button class="darkMode"><img src="/img/svg/ModoEscuro.svg"
+                                alt="Ligar Modo Escuro ou Claro"></button>
+                    </li>
+                    <li>
+                        <button class="contrastMode"><img src="/img/svg/ModoContraste.svg" alt=""></button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="header">
+            <div class="edutech_container"><img class="edutech_img" src="img/edutech.png" alt="Edutech"></div>
+            <nav class="navBar">
+                <button id="navButton"><img src="/img/svg/Menu.svg" alt="Botão Navegação"></button>
+                <ul id="navList">
+                    <li><a href="index.html">Sobre</a></li>
+                    <li><a href="inscricao.html">Inscrição</a></li>
+                    <li><a href="trilha.html">Trilha</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
 
-    <main class="main">
-        
+    <main>
+        <section class="info">
+
+            <h1 class="preTitle">Como posso me
+                <strong class="title">Inscrever</strong>
+            </h1>
+
+            <p class="subtitle text">
+                Qualquer Aluno que more e esteja matriculado no Paraná (PR) e que atenda aos pré requisitos abaixo pode
+                se matricular:
+            </p>
+
+            <ul class="text">
+                <li>Residencia no Paraná (PR)</li>
+                <li>Matriculado em um colégio estadual do Paraná</li>
+                <li>Possuir um Computador com internet</li>
+                <li>Disponibilidade e compromisso com o curso</li>
+                <li>Ter presença e participar das atividades do curso</li>
+            </ul>
+
+            <p class="confirm text">
+                <strong>Concordo com os termos e</strong>
+            </p>
+
+            <a href="" class="bButton">Quero Me Inscrever</a>
+
+            <p class="moreInfo text">
+                <strong>Atenção:</strong>
+                Qualquer descumprimento das regras, seja por exesso de faltas, ou qualquer outra, resultará no
+                desligamento do cursista.
+                Para mais informações confira o edital:
+            </p>
+
+            <a class="link title" href="">Edital completo do regulamento do programa Edutech</a>
+
+        </section>
     </main>
 
-    <footer class="footer flex">
-        <section class="parana">
-            <a target="_blank" href="https://www.educacao.pr.gov.br/"><img src="/img/parana.png" alt="Paraná"
-                    class="logo-parana"></a>
-            <section class="parana_socials">
+    <footer>
+        <section class="redesParana">
+            <a target="_blank" href="https://www.educacao.pr.gov.br/">
+                <img src="/img/parana.png" alt="Paraná">
+            </a>
+            <div class="redes">
                 <a target="_blank" href="http://www.facebook.com/EducacaoParana">
                     <img src="/img/svg/facebook.svg" alt="Facebook Paraná">
                 </a>
@@ -59,29 +95,38 @@
                 <a target="_blank" href="https://www.instagram.com/seedparana/">
                     <img src="/img/svg/instagram.svg" alt="Instagram Paraná">
                 </a>
-            </section>
-        </section>
-        <section class="partnership flex">
-            <img class="logo-edutech" src="/img/edutech.png" alt="Edutech">
-            <div class="flex">
-                <p>Em Parceria com:</p>
-                <img class="logo-alura" src="/img/alura.png" alt="Alura">
             </div>
         </section>
-        <section class="credits flex">
-            <span>
-                <p>Site por:</p>
-                <a target="_blank" href="https://github.com/finpama/finpama">
-                    <p>Finpama</p> 
+
+        <section class="parceria">
+            <img class="logoEdutech" src="/img/edutech.png" alt="Edutech">
+            <p>Em Parceria com:</p>
+            <a target="_blank" href="https://www.alura.com.br/"><img src="/img/alura.png" alt="Alura"></a>
+        </section>
+
+        <section class="creditos">
+            <span class="finpama_container">
+                <p class="finpama_credito">Site por:</p>
+                <a class="finpama_link" target="_blank" href="https://github.com/finpama/finpama">
+                    <p>Finpama</p>
                     <img src="/img/github.png" alt="GitHub">
                 </a>
             </span>
-            <span class="credits_github">
-                <a class="iconscout" href="https://iconscout.com/icons/github" target="_blank">Ícone do GitHub por</a> 
-                <a href="https://iconscout.com/contributors/pixel-icons" target="_blank">Pixel Icons</a>
+            <span class="creditos_links">
+                <div>
+                    <a target="_blank" href="https://iconscout.com/icons/github">Ícone do GitHub por</a>
+                    <a target="_blank" href="https://iconscout.com/contributors/pixel-icons">Pixel Icons</a>
+                </div>
+                <div>
+                    <a target="_blank" href="https://meyerweb.com/eric/tools/css/reset/">Reset Css</a>
+                    <a target="_blank" href="https://meyerweb.com/">Por Eric da Meyerweb</a>
+                </div>
             </span>
         </section>
     </footer>
+
+    <script type="module" src="./scripts/base.mjs"></script>
+
 </body>
 
 </html>

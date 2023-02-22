@@ -1,6 +1,9 @@
-@import '_tools.scss';
+@import 'tools';
 
-
+.preTitle { color: $green; }
+.title { color: $blue; }
+.text { color: $grey; }
+.background { color: $white }
 
 a, button {
     transition: 200ms;
