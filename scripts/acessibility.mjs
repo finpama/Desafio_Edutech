@@ -15,6 +15,7 @@ function createAcessibilityButtonSetup() {
             cssParser.useObjectSheet('.preTitle', { color: palette.req(mode, 'preTitle') });
             cssParser.useObjectSheet('.title', { color: palette.req(mode, 'title') });
             cssParser.useObjectSheet('.text', { color: palette.req(mode, 'txt') });
+            cssParser.useObjectSheet('section.trilhas details.card', { background: palette.req(mode, 'detailsCard') });
         }
 
 

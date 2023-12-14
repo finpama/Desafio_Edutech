@@ -47,7 +47,7 @@ section.trilhas {
         }
     }
 
-    details {
+    .card {
         @include shadow(rgba(0, 0, 0, 0.15));
 
         width: 100%;
